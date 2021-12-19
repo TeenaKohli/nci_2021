@@ -327,6 +327,3 @@ const returnAllValues = async() => {
 //console.log("hello world?");
 
 module.exports = { getSymbol, getDecimals, getBalanceOfAccount, getName }
-
-
-
