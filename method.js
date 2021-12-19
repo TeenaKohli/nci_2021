@@ -318,4 +318,4 @@ const transferToken = async(toAccount, amount) => {
 }
 
 module.exports = { transferToken }
-//transferToken("0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", 123000000)
+//transferToken("0x8b91cd4ee40e267d7c4ce36d7b8ff4a0e96e06fd", 123)
