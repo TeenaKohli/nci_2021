@@ -1,145 +1,101 @@
 
 # Readme #
 
-This is the readme for this project.  It will include any useful links and commands to run.
+This is the readme for this project , stating all the steps that has been performed in order for succesful execution.
 
 ## Install Visual Studio Code ##
 
 ```https://code.visualstudio.com/Download```
 
-## Install Git ##
-
-1. get a github account at github.com
-
-2. install git locally
-
-```https://github.com/git-guides/install-git```
+Once your visual code in install you can download node js from :
 
 ## Install NodeJs ##
 
-Install following the instructions at the following web page:
-
 ```https://nodejs.org/en/download/```
 
-## Cloning a Repository ##
+## Taking the code from zip folder  ##
 
-Create a folder for your college projects.  Go into that folder.
-
-Inside that college folder, run:
-
-```git clone https://github.com/eoinco/nci_2021.git```
-
-## Updating Code in Repo from Github ##
-
-From the terminal in Visual Studio Code (or from the command line - as long as you are in the folder), run the following command:
-
-```git pull origin main```
+Unzip the code folder containing all the files and from command prompt or git bash prompt write code . 
+This will open the entire code in visual editor , where you can run or debug the code as per your requirement 
 
 ## for the moment ##
 
-you need git, nodejs and vs code installed.
+you need to run npm install , to install all dependencies from package.json
+## Executing the project ##
 
-## Validation Steps ##
+1. Create a metamask account and copy your profile id.
+2. Download Remix and copy ozERC20.sol file to compile and deploy through your custom token to create a contract.
+3. Once the contract is created , copt the contract id and save it .
+4. Create an account on infura to create an project for your ropsten endpoint and copt the endpoint API.
+5. Once above steps are done, create a .env file and mention below vales - 
+INFURA_TOKEN = **************
+CONTRACT_ADDRESS = **********
+OWNER_ADDRESS = ***********
+SUPER_SECRET_PRIVATE_KEY = ***************
 
-How to tell you have git installed:
-
-```$git version```
-
-How to tell you have node installed:
-
-```$node -v```
-
-## Using your own repo ##
-
-First, create a repo in github.
-
-git clone into a folder
-
-make your changes
-
-then run the following commands:
-
-```$git add <your updated files>```
-
-```$git commit -m "<your commit message>"```
-
-```$git push origin main```
+a working .env file has been provided for mycode execution
 
 ## Executing a .JS file ##
 
 To execute a javascript file using node.js, run the following command:
 
-```$node <file name>```
-
-
-## Dependencies and NPM ##
-
-We want to use large chunks of code that others have written to interact with Ethereum, like the web3 package.  Do this, we need to set up the Node Package Manager (npm).
-
-From inside your folder, to create your own package.json:
-
-```$npm init```
+after succesfull installation of all npm dependencies from package.json 
+run 
+node contract.js
+node distribut.js - it will distibute tokens to 10 accounts mentioned in account.txt
 
 
 ## CURL accessing of handlers"
 
 To POST to a route, execute the following CURL command:
 
-```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to": "0x4d60E7f9d4901816981a0E4c6D95F394159C6371", "amount": "123000"}'```
+```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to": "0x8B91cD4EE40E267d7C4Ce36D7b8Ff4a0E96E06FD", "amount": "123000"}'```
 
 
 ## Docker ##
 
+crerating a custom docker image for the container to run in background .
 ### View running docker containers ###
 
-```docker ps```
+docker --version
+docker image ls
+docker container ps
 
 ### build a docker container ###
 
-```docker build -t nci/lab2021 .```
+docker build -t teenakohli2286/blockchainimage .
 
-### run the image ###
+### run the image -d for background process###
 
-```docker run -p 8090:8080 --name nci -d nci/lab2021```
-
-### kill a running container ###
-```docker kill [name]```
-
-### start/stop a container ###
-```docker start/stop [name]```
+docker run -p 8080:8080 --name nci -d teenakohli2286/blockchainimage
 
 ### view logs ###
-```docker logs [name]```
+to view logs once can use 2 intials of dockerprocess 
 
-### view logs inside a container ###
-```docker logs -f [name]```
+docker conatiner logs af
 
-### view images on your computer ###
-```docker image ls```
+## docker hub image 
+created a account on docker and push the image to docker hub.io
+docker push -t latest teenakohli2286/blockchainimage
+Using default tag: latest
+The push refers to repository [docker.io/teenakohli2286/blockchainimage]
 
-### clear the docker system ###
-```docker system prune -f```
-
-### remove all docker images ###
-```docker image prune -a -f```
-
-### run docker-compose ###
-```docker-compose up```
-
-to run it in detached mode:
-
-```docker-compose up -d```
+and can be oublically accesed - 
+https://hub.docker.com/repository/docker/teenakohli2286/blockchainimage
 
 
 ## Requirements for Assignment ##
 
 ### 1. create an ethereum account ###
+Account id - 0xaD21146De8C91BB1521850028281a47a0426954D
 This is completed inside metamask (12 words, create an account, fund with Ropsten ether)
 
 ### 2. Create an ERC20-compliant, fixed-supply token
 using open zeppelin contract, 
+ TrialDeploy.TOK 
 
 ### 3. Deply to Ropsten
 deploying using injected web3 and metamask
+https://ropsten.etherscan.io/token/0x8b91cd4ee40e267d7c4ce36d7b8ff4a0e96e06fd?a=0xaD21146De8C91BB1521850028281a47a0426954D
 
 
